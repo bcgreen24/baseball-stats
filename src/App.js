@@ -10,14 +10,14 @@ class App extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <StatSelect />
                 <HR />
                 <Hits />
             </div>
         );
-}
+    }
 }
 export default App;
 
