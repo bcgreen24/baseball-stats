@@ -1,0 +1,36 @@
+
+.wrapper{
+    padding: 10px;
+    width: 450px;
+    float: left;
+}
+
+table#stats{
+    width: 450px;
+    border-collapse: collapse;
+    border: solid 1px #ccc;
+    background-color: #fff;
+}
+
+table#stats td.center{
+    border: solid 1px #ccc;
+    padding: 5px;
+    font-weight: 200;
+    text-align: center;
+    background-color: #fff;
+}
+
+table#stats th{
+    border: solid 1px #ccc;
+    padding: 5px;
+    font-weight: 500;
+    background-color: #fff;
+}
+
+td.left, th.left{
+    text-align: left;
+    border: solid 1px #ccc;
+    padding: 5px;
+    font-weight: 200;
+    background-color: #fff;
+}
