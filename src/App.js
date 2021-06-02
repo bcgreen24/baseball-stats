@@ -10,13 +10,13 @@ class App extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div>
                 <HR />
                 <Hits />
             </div>
         );
-}
+    }
 }
 export default App;
 
