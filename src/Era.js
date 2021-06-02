@@ -1,7 +1,7 @@
 import './HR.css';
 import React from "react";
 
-class HR extends React.Component {
+class Era extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,13 +12,13 @@ class HR extends React.Component {
     }
 
     componentDidMount() {
-        fetch("https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=10&game_type=%27R%27&season=%272021%27&sort_column=%27hr%27&leader_hitting_repeater.col_in=hr,name_display_first_last,player_id")
+        fetch("https://lookup-service-prod.mlb.com/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=10&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last")
             .then(res => res.json())
             .then(
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        items: result.leader_hitting_repeater.leader_hitting_mux.queryResults.row
+                        items: result.leader_pitching_repeater.leader_pitching_mux.queryResults.row
                     });
                 },
                 (error) => {
@@ -30,14 +30,6 @@ class HR extends React.Component {
             )
     }
 
-    handlePlayerID(e){
-        e.preventDefault();
-        for(const prop in e.target){
-            console.log(prop);
-        }
-        console.log(e.target.href)
-    }
-
     render() {
         const { error, isLoaded, items } = this.state;
         if (error) {
@@ -46,12 +38,12 @@ class HR extends React.Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <div className="wrapper"><div className="heading"><img class="ball_icon" src="logo192.png"/><h1>HR Leaders</h1></div>
+                <div className="wrapper"><div className="heading"><img class="ball_icon" src="logo192.png"/><h1>Pitching - ERA</h1></div>
                     <table id="stats"><tbody>
-                        <tr><th className="left">Name</th><th>Home Runs</th></tr>
+                        <tr><th className="left">Name</th><th>ERA</th></tr>
                         {items.map(item => (
                             <tr>
-                                <td className="left"><a href={item.player_id} onClick={this.handlePlayerID}>{item.name_display_first_last}</a></td><td className="center">{item.hr}</td>
+                                <td className="left">{item.name_display_first_last}</td><td className="center">{item.era}</td>
                             </tr>
                         ))}
                     </tbody></table>
@@ -61,4 +53,4 @@ class HR extends React.Component {
     }
 }
 
-export default HR;
+export default Era;

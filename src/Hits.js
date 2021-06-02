@@ -38,9 +38,9 @@ class Hits extends React.Component {
             return <div>Loading...</div>;
         } else {
             return (
-                <div className="wrapper"><h1>Leading Hitters</h1>
+                <div className="wrapper"><div className="heading"><img class="ball_icon" src="logo192.png"/><h1>Leading Hitters</h1></div>
                     <table id="stats"><tbody>
-                        <tr><th>Name</th><th>Hits</th></tr>
+                        <tr><th className="left">Name</th><th>Hits</th></tr>
                         {items.map(item => (
                             <tr>
                                 <td className="left">{item.name_display_first_last}</td><td className="center">{item.h}</td>

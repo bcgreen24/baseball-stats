@@ -1,12 +1,13 @@
 
 .wrapper{
     padding: 10px;
-    width: 450px;
+    width: 350px;
+
     float: left;
 }
 
 table#stats{
-    width: 450px;
+    width: 325px;
     border-collapse: collapse;
     border: solid 1px #ccc;
     background-color: #fff;
@@ -33,4 +34,18 @@ td.left, th.left{
     padding: 5px;
     font-weight: 200;
     background-color: #fff;
+}
+
+.ball_icon{
+    width: 35px;
+    margin-top: 23px;
+    margin-right: 0px;
+}
+
+div.heading *{
+    float: left;
+    color:  #eee;
+}
+div.heading{
+    vertical-align: middle;
 }
