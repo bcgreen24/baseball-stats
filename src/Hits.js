@@ -12,7 +12,7 @@ class Hits extends React.Component {
     }
 
     componentDidMount() {
-        fetch("http://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=10&game_type=%27R%27&season=%272021%27&sort_column=%27h%27&leader_hitting_repeater.col_in=h,name_display_first_last")
+        fetch("https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=10&game_type=%27R%27&season=%272021%27&sort_column=%27h%27&leader_hitting_repeater.col_in=h,name_display_first_last")
             .then(res => res.json())
             .then(
                 (result) => {
