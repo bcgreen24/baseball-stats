@@ -49,3 +49,10 @@ div.heading *{
 div.heading{
     vertical-align: middle;
 }
+
+div.player_detail{
+
+    width:  25%;
+    padding: 10px;
+
+}
