@@ -62,9 +62,13 @@ div.player_detail{
 }
 
 @keyframes spin {
-    /*from {transform: rotateX(0deg);transform: rotate(0deg);}*/
-    /*to {transform: rotateX(360deg);transform: rotate(0deg);}*/
     from {transform: translateX(300px) rotate(0deg); }
     to {transform:  translateX(0px) rotate(720deg);}
   }
 
+div#webgl{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1000;
+}

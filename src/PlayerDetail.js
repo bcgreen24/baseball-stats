@@ -15,8 +15,6 @@ class PlayerDetail extends React.Component {
         };
     }
 
-
-
 componentDidMount() {
     fetch(urls.player_detail_base + this.state.player_id + "'")
         .then(res => res.json())
