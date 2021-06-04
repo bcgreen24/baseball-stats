@@ -40,6 +40,9 @@ td.left, th.left{
     width: 35px;
     margin-top: 23px;
     margin-right: 0px;
+    animation-name: spin;
+    animation-duration: 1s;
+    z-index: -1000
 }
 
 div.heading *{
@@ -48,6 +51,7 @@ div.heading *{
 }
 div.heading{
     vertical-align: middle;
+    width: 300px;
 }
 
 div.player_detail{
@@ -56,3 +60,11 @@ div.player_detail{
     padding: 10px;
 
 }
+
+@keyframes spin {
+    /*from {transform: rotateX(0deg);transform: rotate(0deg);}*/
+    /*to {transform: rotateX(360deg);transform: rotate(0deg);}*/
+    from {transform: translateX(300px) rotate(0deg); }
+    to {transform:  translateX(0px) rotate(720deg);}
+  }
+

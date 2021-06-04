@@ -1,12 +1,6 @@
 import './HR.css';
 import React from "react";
-
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import urls from "./url_config.json";
 
 class HR extends React.Component {
     constructor(props) {
@@ -22,7 +16,7 @@ class HR extends React.Component {
     //<Route path="/dashboard" component={Dashboard} />//
 
     componentDidMount() {
-        fetch("https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=10&game_type=%27R%27&season=%272021%27&sort_column=%27hr%27&leader_hitting_repeater.col_in=hr,name_display_first_last,player_id")
+        fetch(urls.leading_hitters)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -45,12 +39,10 @@ class HR extends React.Component {
         for(const prop in e.target){
             console.log(prop);
         }
-        console.log(e.target.href)
     }
 
     render() {
         const { error, isLoaded, items } = this.state;
-        const detailBaseURL = "http://lookup-service-prod.mlb.com/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type='R'&player_id="
         const baseURL = "/player_detail/"
         if (error) {
             return <div>Error: {error.message}</div>;

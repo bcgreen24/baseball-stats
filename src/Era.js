@@ -1,5 +1,6 @@
 import './HR.css';
 import React from "react";
+import urls from "./url_config.json";
 
 class Era extends React.Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class Era extends React.Component {
     }
 
     componentDidMount() {
+        
         fetch("https://lookup-service-prod.mlb.com/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=10&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last,player_id")
             .then(res => res.json())
             .then(

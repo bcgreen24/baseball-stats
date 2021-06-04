@@ -1,0 +1,6 @@
+{
+    "player_detail_base": "https://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id='",
+    "leading_hitters": "https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=10&game_type=%27R%27&season=%272021%27&sort_column=%27hr%27&leader_hitting_repeater.col_in=hr,name_display_first_last,player_id",
+    "leading_pitchers": "https://lookup-service-prod.mlb.com/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=10&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last,player_id"
+
+}

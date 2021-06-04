@@ -4,6 +4,7 @@ import Hits from "./Hits.js";
 import Era from "./Era.js";
 import PlayerDetail from "./PlayerDetail.js";
 
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -27,10 +28,10 @@ class App extends React.Component {
                     <Switch>
                         <Route
                             path='/player_detail/:id'
-                            render={(props) => 
-                                <PlayerDetail {...props} />}                            
+                            render={(props) =>
+                                <PlayerDetail {...props} />}
                         />
-                        <Route path="/" component={App}>
+                        <Route path="/">
                             <HR />
                             <Hits />
                             <Era />

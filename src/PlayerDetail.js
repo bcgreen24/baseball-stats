@@ -1,14 +1,12 @@
 import './HR.css';
 import React from "react";
-import { getByDisplayValue } from '@testing-library/dom';
-import { getAllByPlaceholderText } from '@testing-library/dom';
+import urls from "./url_config.json";
+
 class PlayerDetail extends React.Component {
 
     constructor(props) {
-        console.log(props);
         super(props);
         const { id } = props.match.params;
-        console.log("ID: " + id);
         this.state = {
             error: null,
             isLoaded: false,
@@ -20,8 +18,7 @@ class PlayerDetail extends React.Component {
 
 
 componentDidMount() {
-    console.log(this.state.player_id);
-    fetch("http://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id='" + this.state.player_id + "'")
+    fetch(urls.player_detail_base + this.state.player_id + "'")
         .then(res => res.json())
         .then(
             (result) => {
@@ -52,7 +49,9 @@ render() {
             <div className="player_detail"><div className="heading"><img alt="baseball" className="ball_icon" src="../logo192.png"/><h1>Player Details</h1></div>
                 <div>
                 <table id="stats">
+                    <tbody>
                     <tr><td className="left">Name: </td><td className="left">{item.name_display_first_last}</td></tr>
+                    <tr><td className="left">Nickname: </td><td className="left">{item.name_nick}</td></tr>
                     <tr><td className="left">Team Name: </td><td className="left">{item.team_name}</td></tr>
                     <tr><td className="left">Primary Position: </td><td className="left">{item.primary_position_txt}</td></tr>
                     <tr><td className="left">MLB Debut: </td><td className="left">{dateDebut}</td></tr>
@@ -60,7 +59,7 @@ render() {
                     <tr><td className="left">Birth Country: </td><td className="left">{item.birth_country}</td></tr>
                     <tr><td className="left">Birth City: </td><td className="left">{item.birth_city}</td></tr>
                     <tr><td className="left">Age: </td><td className="left">{item.age}</td></tr>
-                    
+                    </tbody>
                     
                     
                 </table>
@@ -69,7 +68,7 @@ render() {
         );
     }
 }
-
+// name_nick
 }
 
 export default PlayerDetail;
