@@ -1,8 +1,10 @@
+var camera, renderer;
+
 function init(){
     var scene = new THREE.Scene();
     
     scene.physicallyCorrectLights = false;
-    
+    scene.fog = new THREE.FogExp2(0x333333,0.4);
     var sphere = getSphere(1);
     sphere.name = 'ball';
     var pointLight = getPointLight(2);
@@ -18,7 +20,7 @@ function init(){
 
     scene.add(pointLight);
 
-    var camera = new THREE.PerspectiveCamera(
+    camera = new THREE.PerspectiveCamera(
         45,
         window.innerWidth/window.innerHeight,
         1,
@@ -28,7 +30,7 @@ function init(){
     camera.position.y = 3;
     camera.position.x = 2;
     camera.lookAt(new THREE.Vector3(0,0,0,0));
-    var renderer = new THREE.WebGLRenderer(
+    renderer = new THREE.WebGLRenderer(
         {
         antialias: true
         }
@@ -36,7 +38,7 @@ function init(){
 
     renderer.shadowMap.enabled = true;
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x444444);
+    renderer.setClearColor(0x333333);
     document.getElementById('webgl').appendChild(renderer.domElement);
 
     update(renderer, scene, camera);
@@ -96,6 +98,17 @@ function getPointLight(intensity){
     var light = new THREE.PointLight(0xffffff, intensity);
     light.castShadow = true;
     return light;
+}
+
+window.addEventListener( 'resize', onWindowResize, false );
+
+function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
 }
 
 var scene = init();
