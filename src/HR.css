@@ -1,13 +1,13 @@
 
 .wrapper{
     padding: 10px;
-    width: 350px;
+    width: 300px;
 
     float: left;
 }
 
 table#stats{
-    width: 325px;
+    width: 275px;
     border-collapse: collapse;
     border: solid 1px #ccc;
     background-color: #fff;
