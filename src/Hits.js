@@ -13,6 +13,7 @@ class Hits extends React.Component {
     }
 
     componentDidMount() {
+        //from url_config.json
         fetch(urls.leading_hitters)
             .then(res => res.json())
             .then(

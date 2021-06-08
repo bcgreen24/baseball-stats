@@ -13,10 +13,9 @@ class HR extends React.Component {
         };
     }
 
-    //<Route path="/dashboard" component={Dashboard} />//
-
     componentDidMount() {
-        fetch(urls.leading_hitters)
+        //from url_config.json
+        fetch(urls.leading_hr)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -32,13 +31,6 @@ class HR extends React.Component {
                     });
                 }
             )
-    }
-
-    handlePlayerID(e){
-        e.preventDefault();
-        for(const prop in e.target){
-            console.log(prop);
-        }
     }
 
     render() {
