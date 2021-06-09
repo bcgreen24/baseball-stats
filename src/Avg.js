@@ -9,7 +9,7 @@ function Avg() {
 
     useEffect(() => {
         //from url_config.json
-        fetch(urls.avgs)
+        fetch(urls.base_url + urls.avgs)
             .then(res => res.json())
             .then(
                 (result) => {

@@ -9,7 +9,7 @@ function Hits() {
 
     useEffect(() => {
         //from url_config.json
-        fetch(urls.leading_hitters)
+        fetch(urls.base_url + urls.leading_hitters)
             .then(res => res.json())
             .then(
                 (result) => {

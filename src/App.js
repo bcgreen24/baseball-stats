@@ -3,23 +3,14 @@ import HR from "./HR.js";
 import Hits from "./Hits.js";
 import Era from "./Era.js";
 import Avg from "./Avg.js";
+import StatSelect from "./StatSelect.js";
 import PlayerDetail from "./PlayerDetail.js";
-
 
 import {
     BrowserRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
-
-/*
-<Route
-  path='/dashboard'
-  render={(props) => (
-    <Dashboard {...props} isAuthed={true} />
-  )}
-/>
-*/
 
 class App extends React.Component {
     render() {
@@ -29,14 +20,12 @@ class App extends React.Component {
                     <Switch>
                         <Route
                             path='/player_detail/:id'
-                            render={(props) =>
-                                <PlayerDetail {...props} />}
+                            render={() =>
+                                <PlayerDetail />}
                         />
                         <Route path="/">
-                            <HR />
-                            <Hits />
-                            <Era />
-                            <Avg />
+                            <StatSelect/>
+                            
                         </Route>
                     </Switch>
                 </div>
@@ -44,5 +33,6 @@ class App extends React.Component {
         );
     }
 }
+
 export default App;
 

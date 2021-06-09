@@ -9,7 +9,7 @@ function HR() {
 
     useEffect(() => {
         //from url_config.json
-        fetch(urls.leading_hr)
+        fetch(urls.base_url + urls.leading_hr)
             .then(res => res.json())
             .then(
                 (result) => {

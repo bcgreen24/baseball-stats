@@ -9,7 +9,7 @@ function Era() {
 
     useEffect(() => {
         //from url_config.json
-        fetch(urls.eras)
+        fetch(urls.base_url + urls.eras)
             .then(res => res.json())
             .then(
                 (result) => {

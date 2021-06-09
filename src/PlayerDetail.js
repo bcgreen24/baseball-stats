@@ -9,7 +9,7 @@ function PlayerDetail() {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch(urls.player_detail_base + id + "'")
+        fetch(urls.base_url + urls.player_detail_base + id + "'")
             .then(res => res.json())
             .then(
                 (result) => {

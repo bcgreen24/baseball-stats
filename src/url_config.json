@@ -1,9 +1,12 @@
 {
-    "player_detail_base": "https://lookup-service-prod.mlb.com/json/named.player_info.bam?sport_code='mlb'&player_id='",
-    "leading_hr": "https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=15&game_type=%27R%27&season=%272021%27&sort_column=%27hr%27&leader_hitting_repeater.col_in=hr,name_display_first_last,player_id",
-    "leading_hitters": "https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=15&game_type=%27R%27&season=%272021%27&sort_column=%27h%27&leader_hitting_repeater.col_in=h,name_display_first_last,player_id",
-    "leading_pitchers": "https://lookup-service-prod.mlb.com/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=15&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last,player_id",
-    "eras": "https://lookup-service-prod.mlb.com/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=15&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last,player_id",
-    "avgs": "https://lookup-service-prod.mlb.com/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=15&game_type=%27R%27&season=%272020%27&sort_column=%27avg%27&leader_hitting_repeater.col_in=avg,name_display_first_last,player_id"
+    "base_url": "https://lookup-service-prod.mlb.com",
+    "player_detail_base": "/json/named.player_info.bam?sport_code='mlb'&player_id='",
+    "leading_hr": "/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=15&game_type=%27R%27&season=%272021%27&sort_column=%27hr%27&leader_hitting_repeater.col_in=hr,name_display_first_last,player_id",
+    "leading_hitters": "/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=15&game_type=%27R%27&season=%272021%27&sort_column=%27h%27&leader_hitting_repeater.col_in=h,name_display_first_last,player_id",
+    "leading_pitchers": "/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=15&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last,player_id",
+    "eras": "/json/named.leader_pitching_repeater.bam?sport_code='mlb'&results=15&game_type='R'&season='2021'&sort_column='era'&leader_pitching_repeater.col_in=era,name_display_first_last,player_id",
+    "avgs": "/json/named.leader_hitting_repeater.bam?sport_code=%27mlb%27&results=15&game_type=%27R%27&season=%272020%27&sort_column=%27avg%27&leader_hitting_repeater.col_in=avg,name_display_first_last,player_id",
+    "career_hitting": "/json/named.sport_career_hitting.bam?league_list_id='mlb'&game_type={game_type}&player_id={player_id}",
+    "career_pitching": "/json/named.sport_career_pitching.bam?league_list_id='mlb'&game_type={game_type}&player_id={player_id}"
 
 }
