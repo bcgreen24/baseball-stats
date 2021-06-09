@@ -2,6 +2,7 @@ import React from "react";
 import HR from "./HR.js";
 import Hits from "./Hits.js";
 import Era from "./Era.js";
+import Avg from "./Avg.js";
 import PlayerDetail from "./PlayerDetail.js";
 
 
@@ -35,6 +36,7 @@ class App extends React.Component {
                             <HR />
                             <Hits />
                             <Era />
+                            <Avg />
                         </Route>
                     </Switch>
                 </div>

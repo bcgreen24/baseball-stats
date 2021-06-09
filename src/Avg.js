@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import urls from "./url_config.json";
 
-function Hits() {
+function Avg() {
     const baseURL = "/player_detail/"
     const [error, setError] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
@@ -9,7 +9,7 @@ function Hits() {
 
     useEffect(() => {
         //from url_config.json
-        fetch(urls.leading_hitters)
+        fetch(urls.avgs)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -32,14 +32,19 @@ function Hits() {
             <div className="wrapper">
                 <div className="heading">
                     <div className="headwrap">
-                        <img alt="baseball" className="ball_icon" src="logo192.png" /><h1>Leading Hitters</h1>
+                        <img alt="baseball" className="ball_icon" src="logo192.png" /><h1>Leading Avgs</h1>
                     </div>
                 </div>
                 <table id="stats"><tbody>
-                    <tr><th className="left">Name</th><th>Hits</th></tr>
+                    <tr><th className="left">Name</th><th>Avg</th></tr>
                     {items.map((item, index) => (
                         <tr key={index}>
-                            <td className="left"><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td><td className="center">{item.h}</td>
+                            <td className="left">
+                                <a href={baseURL + item.player_id}>{item.name_display_first_last}</a>
+                            </td>
+                            <td className="center">
+                                {item.avg}
+                            </td>
                         </tr>
                     ))}
                 </tbody></table>
@@ -49,4 +54,4 @@ function Hits() {
     }
 }
 
-export default Hits;
+export default Avg;

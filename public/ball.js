@@ -1,4 +1,4 @@
-var camera, renderer, mouseX, mouseY;
+var camera, renderer;
 
 function init(){
     var scene = new THREE.Scene();
@@ -89,8 +89,7 @@ function update(renderer, scene, camera){
         scene,
         camera
     );
-    //camera.position.x += ( mouseX - camera.position.x ) * .005;
-    //camera.position.y += ( - mouseY - camera.position.y ) * .005;
+
     requestAnimationFrame(function(){
         update(renderer, scene, camera);
     });
@@ -113,10 +112,6 @@ function onWindowResize(){
 
 }
 
-function myMouseMover(event) {
-    //camera.rotation.z = event.clientX/100 - 5;
-
-}
 
 
 var scene = init();
