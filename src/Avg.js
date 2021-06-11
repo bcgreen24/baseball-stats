@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import urls from "./url_config.json";
 
+
 function Avg() {
     const baseURL = "/player_detail/"
     const [error, setError] = useState('');
@@ -24,19 +25,14 @@ function Avg() {
     }, []);
 
     if (error) {
-        return (<div>Error: {error.message}</div>);
+        return (<div className="status">Error: {error.message}</div>);
     } else if (!isLoaded) {
-        return (<div>Loading...</div>);
+        return (<div className="status"><img className='tiny_image' src='./loading.gif'/></div>);
     } else {
         return (
-            <div className="wrapper">
-                <div className="heading">
-                    <div className="headwrap">
-                        <img alt="baseball" className="ball_icon" src="logo192.png" /><h1>Leading Avgs</h1>
-                    </div>
-                </div>
-                <table id="stats"><tbody>
-                    <tr><th className="left">Name</th><th>Avg</th></tr>
+            <div>
+                <table id="stats" className="table table-striped"><tbody>
+                    <tr><th>Name</th><th>Avg</th></tr>
                     {items.map((item, index) => (
                         <tr key={index}>
                             <td className="left">

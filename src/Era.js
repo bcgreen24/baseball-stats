@@ -24,22 +24,18 @@ function Era() {
     }, []);
 
     if (error) {
-        return (<div>Error: {error.message}</div>);
+        return (<div className="status">Error: {error.message}</div>);
     } else if (!isLoaded) {
-        return (<div>Loading...</div>);
+        return (<div className="status"><img className='tiny_image' src='./loading.gif'/></div>);
     } else {
         return (
-            <div className="wrapper">
-                <div className="heading">
-                <div className="headwrap">
-                    <img alt="baseball" className="ball_icon" src="logo192.png" /><h1>Pitching - ERA</h1>
-                    </div>
-                    </div>
-                <table id="stats"><tbody>
-                    <tr><th className="left">Name</th><th>ERA</th></tr>
+            <div>
+                <table id="stats" className="table table-striped"><tbody>
+                    <tr><th>Name</th><th>ERA</th></tr>
                     {items.map((item, index) => (
                         <tr key={index}>
-                            <td className="left"><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td><td className="center">{item.era}</td>
+                            <td><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td>
+                            <td className="center">{item.era}</td>
                         </tr>
                     ))}
                 </tbody></table>

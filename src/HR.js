@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import urls from "./url_config.json";
 
-function HR() {
+function HRs() {
     const baseURL = "/player_detail/"
     const [error, setError] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
@@ -24,22 +24,18 @@ function HR() {
     }, []);
 
     if (error) {
-        return (<div>Error: {error.message}</div>);
+        return (<div className="status">Error: {error.message}</div>);
     } else if (!isLoaded) {
-        return (<div>Loading...</div>);
+        return (<div className="status"><img className='tiny_image' src='./loading.gif'/></div>);
     } else {
         return (
-            <div className="wrapper">
-                <div className="heading">
-                    <div className="headwrap">
-                        <img alt="baseball" className="ball_icon" src="logo192.png" /><h1>HR Leaders</h1>
-                    </div>
-                </div>
-                <table id="stats"><tbody>
-                    <tr><th className="left">Name</th><th>Home Runs</th></tr>
+            <div>
+                 <table id="stats" className="table table-striped"><tbody>
+                    <tr><th>Name</th><th>Home Runs</th></tr>
                     {items.map((item, index) => (
                         <tr key={index}>
-                            <td className="left"><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td><td className="center">{item.hr}</td>
+                            <td className="left"><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td>
+                            <td className="center">{item.hr}</td>
                         </tr>
                     ))}
                 </tbody></table>
@@ -51,4 +47,4 @@ function HR() {
 
     }
 }
-export default HR;
+export default HRs;

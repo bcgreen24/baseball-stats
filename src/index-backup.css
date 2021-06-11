@@ -1,0 +1,132 @@
+/*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+
+body {
+  background-image: url('./crissXcross.png');
+
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+div#page {
+  min-height:1000px;
+  overflow:auto;
+}
+
+div.player_detail{
+  
+
+  padding: 10px;
+}
+
+div#root{
+  text-align: center;
+}
+
+
+.wrapper{
+  padding: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  width: 400px;
+}
+
+table#stats{
+  width: 275px;
+  border-collapse: collapse;
+  border: solid 1px #ccc;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table#player_detail{
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  border: solid 1px #ccc;
+  background-color: #fff;
+}
+
+table#stats td.center{
+  border: solid 1px #ccc;
+  padding: 5px;
+  font-weight: 200;
+  text-align: center;
+  background-color: #fff;
+}
+
+table#stats th{
+  border: solid 1px #ccc;
+  padding: 5px;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+td.left, th.left{
+  text-align: left;
+}
+
+.ball_icon{
+  float: left;
+  width: 30px;
+  margin-right: 5px;
+  animation-name: spin;
+  animation-duration: 1s;
+  z-index: -1000;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+div.heading h1{
+  color:  #eee;
+  float: left;
+  font-size: 18px;
+}
+
+div.headwrap{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+div.heading{
+  vertical-align: middle;
+  height: 55px;
+  display: grid;
+}
+
+@keyframes spin {
+  from {transform: translateX(300px) rotate(0deg); }
+  to {transform:  translateX(0px) rotate(720deg);}
+}
+
+div#webgl{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1000;
+}
+
+select{
+  width: 25%;
+}
+
+div.status{
+  color: #ddd;
+}
+
+.stats_menu{
+  background-color: #eee;
+}
+
+.menu_container{
+  width: 150px;
+}
+*/

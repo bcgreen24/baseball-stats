@@ -1,10 +1,7 @@
 import React from "react";
-import HR from "./HR.js";
-import Hits from "./Hits.js";
-import Era from "./Era.js";
-import Avg from "./Avg.js";
 import StatSelect from "./StatSelect.js";
 import PlayerDetail from "./PlayerDetail.js";
+import {ThemeProvider} from '@primer/components'
 
 import {
     BrowserRouter as Router,
@@ -15,8 +12,9 @@ import {
 class App extends React.Component {
     render() {
         return (
+            <ThemeProvider>
             <Router>
-                <div>
+                <div className="container">
                     <Switch>
                         <Route
                             path='/player_detail/:id'
@@ -25,11 +23,11 @@ class App extends React.Component {
                         />
                         <Route path="/">
                             <StatSelect/>
-                            
                         </Route>
                     </Switch>
                 </div>
             </Router>
+            </ThemeProvider>
         );
     }
 }
