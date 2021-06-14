@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import urls from "./url_config.json";
 import { Header } from '@primer/components'
+import './milligram.css';
 
 function PlayerDetail() {
-    
+
     let { id } = useParams();
     const [error, setError] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
@@ -93,8 +94,8 @@ function PlayerDetail() {
                                 <td className="text-left">{itemsPitchingCareer != null ? itemsPitchingCareer.era : 'N/A'}</td></tr>
                             <tr><td className="text-end">Career Wins: </td>
                                 <td className="text-left">{itemsPitchingCareer != null ? itemsPitchingCareer.w : 'N/A'}</td></tr>
-                            <tr><td className="text-end">Career Losses: </td><
-                                td className="text-left">{itemsPitchingCareer != null ? itemsPitchingCareer.l : 'N/A'}</td></tr>
+                            <tr><td className="text-end">Career Losses: </td>
+                            <td className="text-left">{itemsPitchingCareer != null ? itemsPitchingCareer.l : 'N/A'}</td></tr>
                             <tr><td className="text-end">College: </td>
                                 <td className="text-left">{items.college ? items.college : 'N/A'}</td></tr>
                             <tr><td className="text-end">Birth Country: </td><
@@ -122,5 +123,6 @@ function getDate(date) {
 
     return (curr_month + "/" + curr_date + "/" + curr_year);
 }
+
 export default PlayerDetail;
 

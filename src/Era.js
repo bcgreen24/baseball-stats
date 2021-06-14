@@ -26,7 +26,7 @@ function Era() {
     if (error) {
         return (<div className="status">Error: {error.message}</div>);
     } else if (!isLoaded) {
-        return (<div className="status"><img className='tiny_image' src='./loading.gif'/></div>);
+        return (<div className="status"><img className='tiny_image' alt='baseball' src='./1485.gif'/></div>);
     } else {
         return (
             <div>
@@ -34,7 +34,7 @@ function Era() {
                     <tr><th>Name</th><th>ERA</th></tr>
                     {items.map((item, index) => (
                         <tr key={index}>
-                            <td><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td>
+                            <td className="left"><a href={baseURL + item.player_id}>{item.name_display_first_last}</a></td>
                             <td className="center">{item.era}</td>
                         </tr>
                     ))}

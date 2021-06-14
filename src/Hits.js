@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import urls from "./url_config.json";
 
-function Hits() {
+function Hits(props) {
     const baseURL = "/player_detail/"
     const [error, setError] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
@@ -26,7 +26,7 @@ function Hits() {
     if (error) {
         return (<div className="status">Error: {error.message}</div>);
     } else if (!isLoaded) {
-        return (<div className="status"><img className='tiny_image' src='./loading.gif'/></div>);
+        return (<div className="status"><img className='tiny_image' alt='baseball' src='./1485.gif'/></div>);
     } else {
         return (
             <div>
@@ -41,7 +41,6 @@ function Hits() {
                 </tbody></table>
             </div>
         );
-
     }
 }
 

@@ -3,12 +3,12 @@ import HRs from "./HR.js";
 import Hits from "./Hits.js";
 import Era from "./Era.js";
 import Avg from "./Avg.js";
-//import PlayerDetail from "./PlayerDetail.js";
+import PlayerDetail from "./PlayerDetail.js";
 
 import { Box, SelectMenu, Button, Header } from '@primer/components'
 import {ChevronDownIcon} from '@primer/octicons-react'
 
-function StatSelect() {
+function StatSelect(props) {
 
     const components = {
         'HRs': <HRs />,
@@ -31,7 +31,7 @@ function StatSelect() {
     React.useEffect(() => {
         setComponent(components['HRs']);
         setTitle('Leading Home Run Hitters');
-        
+        console.log('Props: ' + props.greeting);
     }, []);
 
     return (

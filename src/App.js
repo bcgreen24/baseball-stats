@@ -1,4 +1,5 @@
 import React from "react";
+//import Data from "./Data.js";
 import StatSelect from "./StatSelect.js";
 import PlayerDetail from "./PlayerDetail.js";
 import {ThemeProvider} from '@primer/components'
@@ -21,9 +22,11 @@ class App extends React.Component {
                             render={() =>
                                 <PlayerDetail />}
                         />
-                        <Route path="/">
-                            <StatSelect/>
-                        </Route>
+                        <Route
+                            path='/'
+                            render={(props) =>
+                                <StatSelect />}
+                        />
                     </Switch>
                 </div>
             </Router>
