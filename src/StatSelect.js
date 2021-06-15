@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import HRs from "./HR.js";
-import Hits from "./Hits.js";
-import Era from "./Era.js";
-import Avg from "./Avg.js";
+import Stats from "./Stats.js";
+import urls from "./url_config.json";
 //import PlayerDetail from "./PlayerDetail.js";
 
 import { Box, SelectMenu, Button, Header } from '@primer/components'
@@ -11,10 +9,10 @@ import {ChevronDownIcon} from '@primer/octicons-react'
 function StatSelect() {
 
     const components = {
-        'HRs': <HRs />,
-        'Hits': <Hits />,
-        'Era': <Era />,
-        'Avg': <Avg />
+        'HRs': 'HRs',
+        'Hits': 'Hits',
+        'Era': 'Era',
+        'Avg': 'Avg'
     }
 
     const titles = {
@@ -24,15 +22,23 @@ function StatSelect() {
         'Avg':"Best Batting Averages"
     }
 
-    const [header_title, setTitle] = useState();
+    const fetch_urls = {
+        'Hits': urls.leading_hitters,
+        'HRs': urls.leading_hr,
+        'Era': urls.leading_pitchers,
+        'Avg': urls.avgs
+    }
 
-    const [component, setComponent] = useState();
+    const data_fields = {
+        'HRs':['name_display_first_last', 'hr'],
+        'Hits':['name_display_first_last', 'h'],
+        'Era':['name_display_first_last', 'era'],
+        'Avg':['name_display_first_last', 'avg'],
 
-    React.useEffect(() => {
-        setComponent(components['HRs']);
-        setTitle('Leading Home Run Hitters');
-        
-    }, []);
+    }
+
+    const [header_title, setTitle] = useState('Leading Home Run Hitters');
+    const [component, setComponent] = useState('HRs');
 
     return (
         <div>
@@ -55,7 +61,7 @@ function StatSelect() {
         </Header>
         <Box className="content_box">
             <div>
-                {component}
+                <Stats component_name={component} data_col={component} url={fetch_urls[component]} data_fields={data_fields[component]}/>
             </div>
         </Box>
         </div>
