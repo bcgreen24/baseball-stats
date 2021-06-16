@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import urls from "./url_config.json";
+import config from "./url_config.json";
 import { Header } from '@primer/components'
-import './milligram.css';
+
 
 function PlayerDetail() {
 
@@ -14,7 +14,7 @@ function PlayerDetail() {
     const [itemsPitchingCareer, setCareerPitchingItems] = useState([]);
 
     useEffect(() => {
-        fetch(urls.base_url + urls.player_detail_base + id + "'")
+        fetch(config.fetch_urls.base_url + config.fetch_urls.player_detail_base + id + "'")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -29,7 +29,7 @@ function PlayerDetail() {
     }, [id]);
 
     useEffect(() => {
-        fetch(urls.base_url + urls.career_hitting + id + "'")
+        fetch(config.fetch_urls.base_url + config.fetch_urls.career_hitting + id + "'")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -44,7 +44,7 @@ function PlayerDetail() {
     }, [id]);
 
     useEffect(() => {
-        fetch(urls.base_url + urls.career_pitching + id + "'")
+        fetch(config.fetch_urls.base_url + config.fetch_urls.career_pitching + id + "'")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -70,7 +70,7 @@ function PlayerDetail() {
                     <Header.Item><a href='/'>HOME</a>&nbsp;/&nbsp;Player Detail</Header.Item>
                 </Header>
                 <div>
-                    <table className="table table-condensed table-striped">
+                    <table className="table table-condensed table-striped w3-striped w3-table w3-bordered">
                         <tbody>
                             <tr><td className="text-end">Name: </td>
                                 <td className="text-left">{items.name_display_first_last}</td></tr>

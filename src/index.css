@@ -6,14 +6,16 @@
 
 body{
   background-image:url('./crissXcross.png')!important;
+  font-family: "Abel", sans-serif!important;
+  padding: 10px;
 }
-
-
 
 div.container{
   background-color: #eee;
   width: 85%;
   padding: 0px;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 img.tiny_image{
@@ -23,7 +25,6 @@ img.tiny_image{
 table{
   font-size: 14px;
   line-height: 0.5;
-
 }
 
 td.left, th{
@@ -32,4 +33,18 @@ td.left, th{
 
 td.text-end, td.end{
   text-align: right;
+}
+
+td a{
+  text-decoration: none;
+}
+
+tr.clickable:hover{
+  cursor:pointer;
+}
+
+@media only screen and (min-width: 800px) {
+  div.container {
+    width: 60%;
+  }
 }
